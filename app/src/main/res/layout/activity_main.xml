@@ -20,6 +20,16 @@
         android:layout_marginTop="40dp"
          />
 
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="78dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Location"
+        android:textColor="@color/white" />
+
+
     <Button
         android:layout_marginTop="30dp"
         android:id="@+id/button"
