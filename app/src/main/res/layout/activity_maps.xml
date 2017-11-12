@@ -1,3 +1,12 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical">
+
 <fragment xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:map="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,3 +15,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.su_ange.app.MapsActivity" />
+
+  <!--  <android.support.design.widget.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        app:fabSize="mini"
+        app:srcCompat="@android:drawable/ic_input_add" /> -->
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Now"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        />
+
+</FrameLayout>

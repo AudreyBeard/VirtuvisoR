@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 
 import java.io.BufferedReader;
@@ -14,38 +15,35 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class BookNowActivity extends AppCompatActivity {
+public class BookNowActivity extends AppCompatActivity implements View.OnClickListener {
 
     private EditText editText;
     private String API_KEY;
+    private Exception exception;
+    private Button bookButton;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_book_now);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        bookButton = (Button) findViewById(R.id.button3);
+        bookButton.setOnClickListener(this);
     }
+
 
     protected String doInBackground(Void... urls) {
         editText = (EditText) findViewById(R.id.editText2);
         String location = editText.getText().toString();
+        String coordinates = "42.33141,-71.099396";
         // Do some validation here
         API_KEY="3e2b9d16-c415-41f7-b882-2eb4a4cb074e";
         try {
-            URL url = new URL("http://api.tripadvisor.com/api/partner/2.0/location/89575?key=" + API_KEY);
+            URL url = new URL("https://api.tripadvisor.com/api/partner/2.0/map/"+coordinates+"?key=" + API_KEY);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             try {
+                Log.i("URL is", String.valueOf(url));
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
                 StringBuilder stringBuilder = new StringBuilder();
                 String line;
@@ -68,6 +66,14 @@ public class BookNowActivity extends AppCompatActivity {
         if(response == null) {
             response = "THERE WAS AN ERROR";
         }
+        editText.setText(response);
         Log.i("INFO", response);
+    }
+
+    @Override
+    public void onClick(View view) {
+        String response = doInBackground();
+        onPostExecute(response);
+
     }
 }
