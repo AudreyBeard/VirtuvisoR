@@ -22,7 +22,7 @@ public class Hotels extends AppCompatActivity implements AdapterView.OnItemClick
     private ArrayAdapter<String> arrayad;
     private ArrayList<String> arrayList;
     private TextView selection;
-    private String[]items={"Hotel1","Hotel2","Hotel3"};
+    private String[]items={"The Hilton","The Ritz-Carlton","The Marriott"};
     private WebView web;
 
     @Override
