@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public void onClick(View view) {
         Intent intent;
-        intent = new Intent(this, MapsActivity.class);
+        intent = new Intent(this, VRE360.class);
         startActivity(intent);
 
     }

@@ -11,12 +11,25 @@
      limitations under the License.
 --><!-- This can go anywhere in your layout. -->
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_vertical|center_horizontal"
+        android:layout_marginVertical="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Find hotel"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
+
     <fragment
         android:id="@+id/streetviewpanorama"
+        class="com.google.android.gms.maps.SupportStreetViewPanoramaFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        class="com.google.android.gms.maps.SupportStreetViewPanoramaFragment" />
+        android:layout_height="match_parent" />
+
 </FrameLayout>

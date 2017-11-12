@@ -1,5 +1,6 @@
 package com.example.su_ange.app;
 
+import android.location.Geocoder;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,9 +16,11 @@ import com.google.android.gms.maps.model.LatLng;
 
     public class VRE360 extends AppCompatActivity {
 
+        // Use Geocoder to process English into LatLng
+        //private final Geocoder geocoder = new Geocoder();
+        //GeocoderRequest geocoderRequest = new GeocoderRequestBuilder().setAddress()
         // Boston, MA
         private final LatLng BOSTON = new LatLng(42.33141,-71.099396);
-
         @Override
         protected void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);

@@ -15,19 +15,6 @@
             app:fabSize="mini"
             app:srcCompat="@android:drawable/ic_input_add" /> -->
 
-    <Button
-        android:layout_marginTop="30dp"
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Book Now"
-        android:textColor="@color/white"
-        android:background="@color/colorPrimaryDark"
-        android:textSize="30dp"
-        android:layout_gravity="center"
-        android:layout_marginBottom="30dp"
-        />
-
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/pinkeye"
         android:layout_width="wrap_content"
@@ -42,5 +29,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context="com.example.su_ange.app.MapsActivity" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center"
+        android:layout_marginBottom="30dp"
+        android:layout_marginTop="30dp"
+        android:background="@color/colorPrimaryDark"
+        android:text="Book Now"
+        android:textColor="@color/white"
+        android:textSize="30dp" />
 
 </FrameLayout>
