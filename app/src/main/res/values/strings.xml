@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">App</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="title_activity_book_now">BookNowActivity</string>
+    <string name="title_activity_vre360">VRE360</string>
+    <string name="title_activity_hotels">Hotels</string>
 </resources>

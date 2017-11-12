@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:gravity="center"
+    tools:context="com.example.su_ange.app.BookNowActivity">
+
+    <include layout="@layout/content_book_now"
+        android:id="@+id/include" />
+
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:textSize="40dp"
+        android:inputType="textPersonName"
+        android:text="Book Now!" />
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Book Now"
+        android:textColor="@color/white"
+        android:background="@color/colorPrimaryDark"
+        android:textSize="30dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="30dp"
+        />
+
+</android.support.design.widget.CoordinatorLayout>
