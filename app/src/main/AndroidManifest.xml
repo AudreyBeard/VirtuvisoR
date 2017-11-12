@@ -46,6 +46,10 @@
         <activity
             android:name=".VRE360"
             android:label="@string/title_activity_vre360"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Hotels"
+            android:label="@string/title_activity_hotels"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
