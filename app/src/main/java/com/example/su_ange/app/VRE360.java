@@ -31,7 +31,8 @@ import android.widget.EditText;
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_vre360);
             Intent intent = getIntent();
-            String latLngString = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+            String latLngString = intent.getStringExtra(MainActivity.EXTRA_MESSAGE2);
+            latLngString = latLngString.substring(10,latLngString.length()-1);
             String[] latLngParts = latLngString.split(",");
             location = new LatLng(Float.parseFloat(latLngParts[0]), Float.parseFloat(latLngParts[1]));
             
