@@ -42,6 +42,10 @@
         <activity
             android:name=".BookNowActivity"
             android:label="@string/title_activity_book_now"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".VRE360"
+            android:label="@string/title_activity_vre360"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
