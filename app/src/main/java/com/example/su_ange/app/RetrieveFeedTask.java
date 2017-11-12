@@ -1,9 +1,13 @@
 package com.example.su_ange.app;
 
 import android.os.AsyncTask;
+import android.os.Message;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -31,7 +35,8 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
         // Do some validation here
         API_KEY="3e2b9d16-c415-41f7-b882-2eb4a4cb074e";
         try {
-            URL url = new URL("https://api.tripadvisor.com/api/partner/2.0/map/"+coordinates+"?key=" + API_KEY);
+            //URL url = new URL("https://api.tripadvisor.com/api/partner/2.0/map/"+coordinates+"?key=" + API_KEY);
+            URL url = new URL("http://api.tripadvisor.com/api/partner/2.0/location/187147/attractions?key=" + API_KEY);
             URLConnection urlConnection = url.openConnection();
             try {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(urlConnection.getInputStream()));
@@ -59,5 +64,37 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
         //editText.setText(response);
         Log.i("INFO", response);
        // editText.setText(response)
+
+        //decode JSON
+        try {
+
+            JSONObject obj = new JSONObject(response);
+
+            String attraction = obj.getJSONObject("data").getString("name");
+            Log.i("JSON", "title " + attraction);
+
+            /**
+             String desc = obj.getJSONObject("website").getString("siteDescription");
+             Log.i("JSON", "description " + desc);
+             String email = obj.getJSONObject("website").getString("contactEmail");
+             Log.i("JSON", "email " + email);
+             String phone = obj.getJSONObject("website").getString("contactPhoneNumber");
+             Log.i("JSON", "phone " + phone);
+             **/
+
+
+
+           // Message msg = handler.obtainMessage();
+            //msg.obj = attraction;
+            //handler.sendMessage(msg);
+
+
+
+        } catch (JSONException e) {
+            e.getMessage();
+            e.printStackTrace();
+        }
     }
+
+
 }
