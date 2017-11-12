@@ -40,7 +40,8 @@ public class BookNowActivity extends AppCompatActivity implements View.OnClickLi
         // Do some validation here
         API_KEY="3e2b9d16-c415-41f7-b882-2eb4a4cb074e";
         try {
-            URL url = new URL("https://api.tripadvisor.com/api/partner/2.0/map/"+coordinates+"?key=" + API_KEY);
+            //URL url = new URL("https://api.tripadvisor.com/api/partner/2.0/map/"+coordinates+"?key=" + API_KEY);
+            URL url = new URL ("http://api.tripadvisor.com/api/partner/2.0/map/"+coordinates+"/hotels?key="+API_KEY);
             HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
             try {
                 Log.i("URL is", String.valueOf(url));

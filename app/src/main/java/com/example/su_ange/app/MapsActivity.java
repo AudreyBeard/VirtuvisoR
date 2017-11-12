@@ -16,8 +16,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, View.OnClickListener {
 
     private GoogleMap mMap;
-    private Button booknowbutton;
-
+    private Button booknowbutton,pe;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,12 +28,20 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
         booknowbutton = (Button) findViewById(R.id.button2);
         booknowbutton.setOnClickListener(this);
+        pe = (Button) findViewById(R.id.pinkeye);
+        pe.setOnClickListener(this);
     }
 
     public void onClick(View view) {
         Intent intent;
-        intent = new Intent(this, BookNowActivity.class);
-        startActivity(intent);
+        switch(view.getId()) {
+            case R.id.button2:
+                intent = new Intent(this, BookNowActivity.class);
+                startActivity(intent);
+            case R.id.pinkeye:
+                intent = new Intent(this, VRE360.class);
+                startActivity(intent);
+        }
 
     }
 
