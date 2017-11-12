@@ -1,6 +1,6 @@
 package com.example.su_ange.app;
 
-import android.location.Geocoder;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,6 +12,7 @@ import com.google.android.gms.maps.OnStreetViewPanoramaReadyCallback;
 import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.LatLng;
+import android.widget.EditText;
 
 
     public class VRE360 extends AppCompatActivity {
@@ -21,11 +22,14 @@ import com.google.android.gms.maps.model.LatLng;
         //GeocoderRequest geocoderRequest = new GeocoderRequestBuilder().setAddress()
         // Boston, MA
         private final LatLng BOSTON = new LatLng(42.33141,-71.099396);
+
+
         @Override
         protected void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_vre360);
-
+            Intent intent = getIntent();
+            String location = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
             SupportStreetViewPanoramaFragment streetViewPanoramaFragment =
                     (SupportStreetViewPanoramaFragment)
                             getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama);
