@@ -14,7 +14,6 @@ import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.LatLng;
 import android.widget.EditText;
 
-
     public class VRE360 extends AppCompatActivity {
 
         // Use Geocoder to process English into LatLng
@@ -30,6 +29,7 @@ import android.widget.EditText;
             setContentView(R.layout.activity_vre360);
             Intent intent = getIntent();
             String location = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
+            
             SupportStreetViewPanoramaFragment streetViewPanoramaFragment =
                     (SupportStreetViewPanoramaFragment)
                             getSupportFragmentManager().findFragmentById(R.id.streetviewpanorama);
