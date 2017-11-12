@@ -14,24 +14,31 @@ import com.google.android.gms.maps.StreetViewPanorama;
 import com.google.android.gms.maps.StreetViewPanoramaFragment;
 import com.google.android.gms.maps.SupportStreetViewPanoramaFragment;
 import com.google.android.gms.maps.model.LatLng;
+
+import android.widget.Button;
 import android.widget.EditText;
 
+import static com.example.su_ange.app.MainActivity.EXTRA_MESSAGE2;
 
-    public class VRE360 extends AppCompatActivity {
+
+public class VRE360 extends AppCompatActivity implements View.OnClickListener {
 
         // Use Geocoder to process English into LatLng
         //private final Geocoder geocoder = new Geocoder();
         //GeocoderRequest geocoderRequest = new GeocoderRequestBuilder().setAddress()
         // Boston, MA
         private LatLng location;
+        private Button findHotels;
 
 
         @Override
         protected void onCreate(final Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_vre360);
+            findHotels = (Button) findViewById(R.id.button6);
+            findHotels.setOnClickListener(this);
             Intent intent = getIntent();
-            String latLngString = intent.getStringExtra(MainActivity.EXTRA_MESSAGE2);
+            String latLngString = intent.getStringExtra(EXTRA_MESSAGE2);
             latLngString = latLngString.substring(10,latLngString.length()-1);
             String[] latLngParts = latLngString.split(",");
             location = new LatLng(Float.parseFloat(latLngParts[0]), Float.parseFloat(latLngParts[1]));
@@ -50,5 +57,14 @@ import android.widget.EditText;
                             }
                         }
                     });
+        }
+
+        @Override
+        public void onClick(View view) {
+            Intent intent;
+            intent = new Intent(this, Hotels.class);
+            //intent.putExtra(EXTRA_MESSAGE, loc);
+            //intent.putExtra(EXTRA_MESSAGE2, longLat);
+            startActivity(intent);
         }
     }

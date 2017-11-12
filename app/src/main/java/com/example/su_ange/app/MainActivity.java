@@ -66,6 +66,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public void onClick(View view) {
+        streetAddr = editText.getText().toString();
+            try {
+                geocode();
+            }
+            catch(Exception e){
+                System.out.print("exception caught");
+            }
         String loc = editText.getText().toString();
         Intent intent;
         intent = new Intent(this, VRE360.class);
