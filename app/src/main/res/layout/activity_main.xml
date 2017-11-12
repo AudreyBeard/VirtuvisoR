@@ -38,10 +38,14 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="-145dp"
         android:ems="10"
+
+        android:hint="   Destination"
         android:inputType="textPersonName"
-        android:text="   Destination"
         android:textColor="@color/white"
-        android:textSize="30dp" />
+        android:textSize="30dp"
+        android:textColorHint="@color/white"
+    />
+
 
 
     <Button
