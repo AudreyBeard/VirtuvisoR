@@ -37,7 +37,24 @@ public class BookNowActivity extends AppCompatActivity implements View.OnClickLi
 
         bookButton = (Button) findViewById(R.id.button3);
         bookButton.setOnClickListener(this);
+
+
+        /*Thread t = new Thread(background);
+        t.start();*/
     }
+
+
+/*
+    //thread connects to the Yelp Api, gets response data, JSON search results,
+    //places data into Log and sends messages to display data on UI
+    Runnable background = new Runnable() {
+        public void run(){
+
+            new RetrieveFeedTask().execute();
+
+
+        }
+*/
 
     @Override
     public void onClick(View view) {

@@ -6,13 +6,17 @@ import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.URL;
 import java.net.URLConnection;
+
+
 
 /**
  * Created by SU_ANGE on 11/11/2017.
@@ -70,8 +74,30 @@ public class RetrieveFeedTask extends AsyncTask<Void, Void, String> {
 
             JSONObject obj = new JSONObject(response);
 
-            String attraction = obj.getJSONObject("data").getString("name");
-            Log.i("JSON", "title " + attraction);
+            //String attraction = obj.getJSONObject("data").getString("name");
+            //Log.i("JSON", "title " + attraction);
+
+            JSONArray results = obj.getJSONArray("data");
+
+            // run through array to find the name
+            String att_name = "";
+            String ranking = "";
+            String longitude = "";
+            String latitude = "";
+            for (int i=0; i < results.length(); i++ ) {
+                JSONObject arr_obj = results.getJSONObject(i);
+                att_name = arr_obj.getString("name");
+                JSONObject rank_obj = arr_obj.getJSONObject("ranking_data");
+                ranking = rank_obj.getString("ranking");
+                longitude = arr_obj.getString("longitude");
+                latitude = arr_obj.getString("latitude");
+                Log.i("JSON", "Attraction: " + att_name);
+                Log.i("JSON", "Ranking: " + ranking);
+                Log.i("JSON", "Longitude: " + longitude);
+                Log.i("JSON", "Latitude: " + latitude);
+
+
+            }
 
             /**
              String desc = obj.getJSONObject("website").getString("siteDescription");
