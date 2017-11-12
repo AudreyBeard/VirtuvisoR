@@ -1,2 +1,0 @@
-# VirtuvisoR
-hackRPI2017
